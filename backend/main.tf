@@ -1,5 +1,5 @@
 module "dynamodb" {
-  source = "./modules/dynamodb"
+  source      = "./modules/dynamodb"
   environment = var.environment
 }
 
@@ -17,8 +17,8 @@ module "s3" {
 }
 
 module "secrets" {
-  source = "./modules/secrets"
-  momentoApiKey = var.momentoApiKey
+  source              = "./modules/secrets"
+  momentoApiKey       = var.momentoApiKey
   momentoHTTPEndpoint = var.momentoHTTPEndpoint
   momentoRefreshToken = var.momentoRefreshToken
 }

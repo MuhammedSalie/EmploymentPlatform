@@ -10,8 +10,8 @@ Backend
 
 ## Requirements
 
-Install Terraform
-Setup AWS profile
+- Install Terraform
+- Setup AWS profile
 
 **Setup Backend Resources**
 

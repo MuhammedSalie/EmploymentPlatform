@@ -20,6 +20,6 @@ resource "aws_dynamodb_table" "job_listings" {
   }
 
   tags = {
-    Environment = var.environment
+    environment = var.environment
   }
 }

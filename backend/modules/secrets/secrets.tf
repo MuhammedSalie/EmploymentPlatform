@@ -7,8 +7,8 @@ resource "aws_secretsmanager_secret" "credentials" {
 resource "aws_secretsmanager_secret_version" "credentials" {
   secret_id     = aws_secretsmanager_secret.credentials.id
   secret_string = jsonencode({
-    MomentoApiKey = var.momentoApiKey,
-    MomentoHTTPEndpoint = var.momentoHTTPEndpoint,
-    MomentoRefreshToken = var.momentoRefreshToken
+    momentoApiKey = var.momentoApiKey,
+    momentoHTTPEndpoint = var.momentoHTTPEndpoint,
+    momentoRefreshToken = var.momentoRefreshToken
   })
 }

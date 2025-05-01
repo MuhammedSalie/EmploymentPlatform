@@ -4,17 +4,21 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "MomentoApiKey" {
+variable "momentoApiKey" {
   type        = string
   description = "Api Key"
 }
 
-variable "MomentoHTTPEndpoint" {
+variable "momentoHTTPEndpoint" {
   type        = string
   description = "HTTP Endpoint"
 }
 
-variable "MomentoRefreshToken" {
+variable "momentoRefreshToken" {
   type        = string
   description = "Refresh Token"
+}
+variable "environment" {
+  type        = string
+  description = "Environment"
 }

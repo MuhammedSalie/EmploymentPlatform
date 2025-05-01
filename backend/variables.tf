@@ -6,12 +6,15 @@ variable "region" {
 
 variable "MomentoApiKey" {
   type        = string
+  description = "Api Key"
 }
 
 variable "MomentoHTTPEndpoint" {
   type        = string
+  description = "HTTP Endpoint"
 }
 
 variable "MomentoRefreshToken" {
   type        = string
+  description = "Refresh Token"
 }

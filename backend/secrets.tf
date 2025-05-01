@@ -1,6 +1,7 @@
 resource "aws_secretsmanager_secret" "credentials" {
   name        = "credentials"
   description = "Credentials for job portal"
+  recovery_window_in_days  = 0
 }
 
 resource "aws_secretsmanager_secret_version" "credentials" {

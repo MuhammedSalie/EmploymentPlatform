@@ -18,7 +18,13 @@ variable "momentoRefreshToken" {
   type        = string
   description = "Refresh Token"
 }
+
 variable "environment" {
   type        = string
   description = "Environment"
+}
+
+variable "email" {
+  type        = string
+  description = "Email Address"
 }

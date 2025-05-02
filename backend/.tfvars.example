@@ -1,0 +1,10 @@
+region = your-aws-region
+
+momentoApiKey = your-memonto-api-key
+momentoHTTPEndpoint = your-memonto-url
+
+momentoRefreshToken = your-memonto-jwt-token
+
+environment = Development/PROD
+
+email = sns-email-address

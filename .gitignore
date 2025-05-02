@@ -39,6 +39,7 @@ node_modules/
 
 # Environments
 .env
+.env.local
 
 # Miscellaneous
 .DS_Store

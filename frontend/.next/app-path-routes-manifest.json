@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/dashboard/page": "/dashboard",
+  "/forgot-password/page": "/forgot-password",
+  "/jobs/[id]/page": "/jobs/[id]",
+  "/applications/page": "/applications",
+  "/jobs/page": "/jobs",
+  "/signup/page": "/signup",
+  "/page": "/",
+  "/signin/page": "/signin"
+}

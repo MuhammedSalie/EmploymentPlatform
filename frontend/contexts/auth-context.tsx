@@ -98,6 +98,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       await amplifySignOut()
       setAuthState({ isAuthenticated: false, isLoading: false, user: null })
+      document.cookie = "amplify.authenticatorAuthState=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=strict";
     } catch (error) {
       console.error("Error signing out:", error)
     }

@@ -13,6 +13,7 @@ import { Loader2 } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useAuth } from "@/contexts/auth-context"
 
+
 export default function SignInPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -26,6 +27,7 @@ export default function SignInPage() {
   useEffect(() => {
     // Check if user is already authenticated
     if (isAuthenticated) {
+
       router.push("/dashboard")
     }
 
@@ -46,6 +48,7 @@ export default function SignInPage() {
 
       if (result.success) {
         // Redirect to dashboard after successful login
+        document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict";
         router.push("/dashboard")
       } else {
         setError(result.error.message || "Invalid email or password. Please try again.")

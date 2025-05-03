@@ -86,7 +86,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         password,
       })
       setAuthState({ isAuthenticated: true, isLoading: false, user })
-      document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict";
+      document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
       return { success: true }
     } catch (error) {
       console.error("Error signing in:", error)

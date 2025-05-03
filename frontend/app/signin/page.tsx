@@ -27,7 +27,7 @@ export default function SignInPage() {
   useEffect(() => {
     // Check if user is already authenticated
     if (isAuthenticated) {
-      document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict";
+      document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
       router.push("/dashboard")
     }
 

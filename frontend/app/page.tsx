@@ -26,7 +26,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative hidden md:block">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <div className="relative rounded-lg bg-muted p-3 shadow-lg">
                 <div className="space-y-2">
                   <div>

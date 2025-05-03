@@ -11,10 +11,10 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
             <div>
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-2xl">
                    Spring Into <span className="text-primary">Your Career</span> Today
               </h1>
-              <p className="mt-6 text-lg text-muted-foreground">
+              <p className="mt-2 text-lg text-muted-foreground">
                 Connect with top employers and discover opportunities that match your skills and career goals.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -27,8 +27,8 @@ export default function Home() {
               </div>
             </div>
             <div className="relative hidden md:block">
-              <div className="relative rounded-lg bg-muted p-8 shadow-lg">
-                <div className="space-y-4">
+              <div className="relative rounded-lg bg-muted p-3 shadow-lg">
+                <div className="space-y-2">
                   <div>
                     <label htmlFor="search" className="text-sm font-medium">
                       Job Title, Keywords, or Company
@@ -60,7 +60,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <Button className="w-full">Search Jobs</Button>
+                  <Button className="w-auto">Search Jobs</Button>
                 </div>
               </div>
             </div>
@@ -72,8 +72,8 @@ export default function Home() {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Popular Job Categories</h2>
-            <p className="mt-4 text-lg text-muted-foreground">Explore opportunities in these in-demand fields</p>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Popular Job Categories</h2>
+            <p className="mt-2 text-lg text-muted-foreground">Explore opportunities in these in-demand fields</p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -107,7 +107,7 @@ export default function Home() {
       <section className="bg-muted/30 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">How It Works</h2>
+            <p className="text-2xl font-bold tracking-tight sm:text-2xl">How It Works</p>
             <p className="mt-4 text-lg text-muted-foreground">Find and apply for jobs in just a few simple steps</p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">

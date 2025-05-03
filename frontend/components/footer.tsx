@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold">NextLeaf</h3>
             <p className="mt-4 text-sm text-muted-foreground">
-              Find your dream job with NextLeaf. We connect talented professionals with top companies.
+            Kickstart your career with NextLeaf. We help ambitious new talent connect with awesome companies looking for fresh ideas.
             </p>
           </div>
           <div>
@@ -52,11 +52,11 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold">Company</h3>
+            <h3 className="text-sm font-semibold">Important Links</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-primary">
-                  Contact
+                  Contact Us
                 </Link>
               </li>
               <li>

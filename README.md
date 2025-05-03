@@ -4,6 +4,10 @@ This repo provides the code to stand up your own website for an employment websi
 
 Frontend
 
+- Next.js framework
+- Progressive Web Applications (PWA)
+- Tailwind CSS
+
 Backend
 
 ## QuickStart

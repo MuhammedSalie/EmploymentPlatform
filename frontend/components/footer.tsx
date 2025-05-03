@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h3 className="text-lg font-semibold">JobMatch</h3>
+            <h3 className="text-lg font-semibold">NextLeaf</h3>
             <p className="mt-4 text-sm text-muted-foreground">
-              Find your dream job with JobMatch. We connect talented professionals with top companies.
+              Find your dream job with NextLeaf. We connect talented professionals with top companies.
             </p>
           </div>
           <div>
@@ -17,11 +17,6 @@ export default function Footer() {
               <li>
                 <Link href="/jobs" className="text-muted-foreground hover:text-primary">
                   Browse Jobs
-                </Link>
-              </li>
-              <li>
-                <Link href="/companies" className="text-muted-foreground hover:text-primary">
-                  Companies
                 </Link>
               </li>
               <li>
@@ -37,7 +32,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold">For Employers</h3>
+            <h3 className="text-sm font-semibold">For Recruiters</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <Link href="/post-job" className="text-muted-foreground hover:text-primary">
@@ -60,11 +55,6 @@ export default function Footer() {
             <h3 className="text-sm font-semibold">Company</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary">
-                  About Us
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-primary">
                   Contact
                 </Link>
@@ -83,7 +73,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} JobMatch. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NextLeaf. All rights reserved.</p>
         </div>
       </div>
     </footer>

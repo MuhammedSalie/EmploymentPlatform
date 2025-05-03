@@ -75,7 +75,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-frontend/.next
+frontend/.next/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

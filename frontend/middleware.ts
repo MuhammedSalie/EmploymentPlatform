@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
   // Check if the user is authenticated by looking for the authentication cookie
   // In a real implementation, you would verify the JWT token
   const isAuthenticated = request.cookies.has("amplify.authenticatorAuthState")
-
+  
   // If accessing a protected route without authentication
   if (protectedRoutes.some((route) => pathname.startsWith(route)) && !isAuthenticated) {
     const url = new URL("/signin", request.url)

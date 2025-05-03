@@ -24,11 +24,6 @@ export default function Footer() {
                   My Applications
                 </Link>
               </li>
-              <li>
-                <Link href="/profile" className="text-muted-foreground hover:text-primary">
-                  Profile
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
@@ -39,34 +34,19 @@ export default function Footer() {
                   Post a Job
                 </Link>
               </li>
-              <li>
-                <Link href="/pricing" className="text-muted-foreground hover:text-primary">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/employer-resources" className="text-muted-foreground hover:text-primary">
-                  Resources
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-semibold">Important Links</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary">
-                  Contact Us
+                <Link href="/" className="text-muted-foreground hover:text-primary">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-primary">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-muted-foreground hover:text-primary">
-                  Terms of Service
+                <Link href="/about" className="text-muted-foreground hover:text-primary">
+                  About Us
                 </Link>
               </li>
             </ul>

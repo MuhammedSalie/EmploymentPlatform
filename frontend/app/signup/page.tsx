@@ -147,7 +147,7 @@ export default function SignUpPage() {
       <Card className="w-full">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
-          <CardDescription>Sign up to start applying for jobs on JobMatch</CardDescription>
+          <CardDescription>Sign up to start applying for jobs on NewLeaf</CardDescription>
         </CardHeader>
         <CardContent>
           {verificationSent ? (

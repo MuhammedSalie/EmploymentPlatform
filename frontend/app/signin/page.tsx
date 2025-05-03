@@ -61,7 +61,7 @@ export default function SignInPage() {
     <div className="container mx-auto flex h-screen max-w-md items-center px-4 py-8">
       <Card className="w-full">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">Sign in to JobMatch</CardTitle>
+          <CardTitle className="text-2xl font-bold">Sign in to NewLeaf</CardTitle>
           <CardDescription>Enter your email and password to access your account</CardDescription>
         </CardHeader>
         <CardContent>

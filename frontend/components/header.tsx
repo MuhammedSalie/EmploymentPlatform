@@ -27,8 +27,6 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Jobs", href: "/jobs" },
-    { name: "Recruiters", href: "/recruiters" },
-    { name: "Contact Us", href: "/contact" },
   ]
 
   const authenticatedNavigation = [

@@ -27,7 +27,6 @@ export default function SignInPage() {
   useEffect(() => {
     // Check if user is already authenticated
     if (isAuthenticated) {
-      document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
       router.push("/dashboard")
     }
 
@@ -48,8 +47,11 @@ export default function SignInPage() {
 
       if (result.success) {
         // Redirect to dashboard after successful login
-        document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict";
-        router.push("/dashboard")
+        await fetch("/api/signin", {
+          method: "POST",
+        });
+      
+        router.push("/dashboard");
       } else {
         setError(result.error.message || "Invalid email or password. Please try again.")
       }

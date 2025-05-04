@@ -140,33 +140,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg bg-secondary p-8 md:p-12">
-            <div className="md:flex md:items-center md:justify-between">
-              <div className="md:max-w-2xl">
-                <h2 className="text-2xl font-bold tracking-tight text-secondary-foreground sm:text-3xl">
-                  Ready to take the next step in your career?
-                </h2>
-                <p className="mt-4 text-lg text-secondary-foreground/90">
-                  Join thousands of job seekers who have found their dream jobs through JobMatch.
-                </p>
-              </div>
-              <div className="mt-8 md:mt-0">
-                <Button
-                  asChild
-                  size="lg"
-                  variant="primary"
-                  className="bg-primary text-primary-foreground hover:bg-primary/90"
-                >
-                  <Link href="/signup">Get Started</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
   )
 }

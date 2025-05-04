@@ -20,13 +20,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/applications" className="text-muted-foreground hover:text-primary">
-                  My Applications
-                </Link>
-              </li>
-              <li>
-                <Link href="/profile" className="text-muted-foreground hover:text-primary">
-                  Profile
+                <Link href="/dashboard" className="text-muted-foreground hover:text-primary">
+                  Dashboard
                 </Link>
               </li>
             </ul>
@@ -39,16 +34,6 @@ export default function Footer() {
                   Post a Job
                 </Link>
               </li>
-              <li>
-                <Link href="/pricing" className="text-muted-foreground hover:text-primary">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="/employer-resources" className="text-muted-foreground hover:text-primary">
-                  Resources
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
@@ -57,16 +42,6 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-primary">
                   Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-primary">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-muted-foreground hover:text-primary">
-                  Terms of Service
                 </Link>
               </li>
             </ul>

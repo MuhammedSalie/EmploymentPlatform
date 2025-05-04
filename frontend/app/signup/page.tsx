@@ -121,7 +121,7 @@ export default function SignUpPage() {
 
         if (signInResult.success) {
           // Redirect to dashboard after successful sign-in
-          router.push("/dashboard")
+          //router.push("/dashboard")
         } else {
           // If sign-in fails, redirect to sign-in page
           router.push("/signin?verified=true")

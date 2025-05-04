@@ -26,7 +26,7 @@ export default function SignInPage() {
   useEffect(() => {
     // Check if user is already authenticated
     if (isAuthenticated) {
-      router.push("/dashboard")
+      //router.push("/dashboard")
     }
 
     // Check if user just verified their account

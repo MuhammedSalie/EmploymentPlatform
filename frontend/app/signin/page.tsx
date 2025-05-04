@@ -48,7 +48,7 @@ export default function SignInPage() {
         // Redirect to dashboard after successful login
         //await fetch("/api/login", { method: "POST" })
         document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
-        router.push("/dashboard")
+        //router.push("/dashboard")
       } else {
         setError(result.error.message || "Invalid email or password. Please try again.")
       }

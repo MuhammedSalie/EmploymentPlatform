@@ -15,7 +15,7 @@ export default function Home() {
                    Spring Into <span className="text-primary">Your Career</span> Today
               </h1>
               <p className="mt-2 text-lg text-muted-foreground">
-                Connect with top employers and discover opportunities that match your skills and career goals.
+              Kickstart your career with NextLeaf. We help ambitious new talent connect with awesome companies looking for fresh ideas...
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg">

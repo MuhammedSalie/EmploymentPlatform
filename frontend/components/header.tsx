@@ -43,7 +43,7 @@ export default function Header() {
 
   const handleSignOut = async () => {
     await signOut()
-    await fetch("/api/logout", { method: "POST" })
+    //await fetch("/api/logout", { method: "POST" })
     document.cookie = "amplify.authenticatorAuthState=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
     router.push("/")
   }

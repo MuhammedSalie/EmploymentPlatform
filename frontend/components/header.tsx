@@ -30,13 +30,11 @@ export default function Header() {
     { name: "About Us", href: "/about" },
     { name: "Jobs", href: "/jobs" },
     { name: "Recruiters", href: "/recruiters" },
-    { name: "Contact Us", href: "/contact" },
   ]
 
   const authenticatedNavigation = [
     ...navigation,
     { name: "Dashboard", href: "/dashboard" },
-    { name: "My Applications", href: "/applications" },
   ]
 
   const currentNavigation = isAuthenticated ? authenticatedNavigation : navigation
@@ -104,13 +102,7 @@ export default function Header() {
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                      <Link href="/profile">Profile</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
                       <Link href="/dashboard">Dashboard</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/applications">Applications</Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={handleSignOut} className="text-red-600 dark:text-red-400">

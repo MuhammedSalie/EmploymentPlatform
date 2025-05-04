@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "./mode-toggle"
 import { usePathname } from "next/navigation"
@@ -19,6 +20,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export default function Header() {
+  const router = useRouter()
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { isAuthenticated, user, signOut, isLoading } = useAuth()
@@ -41,6 +43,8 @@ export default function Header() {
 
   const handleSignOut = async () => {
     await signOut()
+    document.cookie = "amplify.authenticatorAuthState=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+    router.push("/")
   }
 
   return (

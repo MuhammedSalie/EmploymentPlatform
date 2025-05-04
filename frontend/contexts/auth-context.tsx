@@ -85,7 +85,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         username: email,
         password,
       })
-      setAuthState({ isAuthenticated: true, isLoading: false, user })
+      setAuthState({ isAuthenticated: true, isLoading: false, user }
+      )
       return { success: true }
     } catch (error) {
       console.error("Error signing in:", error)

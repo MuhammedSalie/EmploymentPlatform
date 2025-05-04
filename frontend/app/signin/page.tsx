@@ -46,6 +46,7 @@ export default function SignInPage() {
 
       if (result.success) {
         // Redirect to dashboard after successful login
+        await fetch("/api/login", { method: "POST" })
         document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
         router.push("/dashboard")
       } else {

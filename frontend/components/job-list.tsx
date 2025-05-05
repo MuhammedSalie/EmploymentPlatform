@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import JobCard from "@/components/job-card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -12,6 +13,7 @@ const MOCK_JOBS = [
   {
     id: "1",
     title: "Senior Frontend Developer",
+    category: "technology",
     company: "TechCorp",
     location: "San Francisco, CA",
     salary: "$120,000 - $150,000",
@@ -32,6 +34,7 @@ const MOCK_JOBS = [
   {
     id: "2",
     title: "Backend Engineer",
+    category: "technology",
     company: "DataSystems",
     location: "New York, NY",
     salary: "$130,000 - $160,000",
@@ -51,6 +54,7 @@ const MOCK_JOBS = [
   {
     id: "3",
     title: "UX/UI Designer",
+    category: "marketing",
     company: "CreativeMinds",
     location: "Remote",
     salary: "$90,000 - $120,000",
@@ -70,6 +74,7 @@ const MOCK_JOBS = [
   {
     id: "4",
     title: "DevOps Engineer",
+    category: "finance",
     company: "CloudTech",
     location: "Austin, TX",
     salary: "$110,000 - $140,000",
@@ -89,6 +94,7 @@ const MOCK_JOBS = [
   {
     id: "5",
     title: "Product Manager",
+    category: "finance",
     company: "InnovateCo",
     location: "Chicago, IL",
     salary: "$100,000 - $130,000",
@@ -108,19 +114,29 @@ const MOCK_JOBS = [
 ]
 
 export default function JobList() {
+  const searchParams = useSearchParams()
+  const categoryFilter = searchParams.get("category")?.toLowerCase()
   const [jobs, setJobs] = useState(MOCK_JOBS)
   const [loading, setLoading] = useState(true)
   const [sortBy, setSortBy] = useState("match")
   const [dailyProgress, setDailyProgress] = useState(60)
 
   useEffect(() => {
-    // Simulate API call
     const timer = setTimeout(() => {
+      let filtered = MOCK_JOBS
+
+      if (categoryFilter) {
+        filtered = MOCK_JOBS.filter((job) =>
+          job.category.toLowerCase().includes(categoryFilter)
+        )
+      }
+
+      setJobs(filtered)
       setLoading(false)
-    }, 1000)
+    }, 500)
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [categoryFilter])
 
   const handleSortChange = (value: string) => {
     setSortBy(value)

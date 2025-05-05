@@ -7,7 +7,8 @@ import {
   signOut,
   getCurrentUser,
   confirmResetPassword,
-} from "aws-amplify/auth"
+  resetPassword,
+  } from "aws-amplify/auth"
 import { awsConfig } from "./aws-config"
 
 // Initialize Amplify
@@ -122,4 +123,16 @@ export const authService = {
       return { success: false, error }
     }
   },
+
+  //request to send user reset password code
+   sendPasswordResetEmail: async (email: string) => {
+    try {
+      const response = await resetPassword({ username: email })
+      console.log("Reset password email sent:", response)
+      return { success: true }
+    } catch (error) {
+      console.error("Error sending password reset email:", error)
+      return { success: false, error }
+    }
+  }
 }

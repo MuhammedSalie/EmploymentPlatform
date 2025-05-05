@@ -190,24 +190,18 @@ export default function SignUpPage() {
               </Button>
 
               <div className="text-center text-sm">
-                <span className="text-muted-foreground">Didn't receive a code? </span>
+                <span className="text-muted-foreground">Skip account confirmation </span>
                 <button
                   type="button"
                   className="text-primary hover:underline"
                   onClick={async () => {
                     setIsLoading(true)
-                    try {
-                      await authService.signUp(formData.email, formData.password, {
-                        name: formData.fullName,
-                      })
-                    } catch (err) {
-                      console.error("Error resending code:", err)
-                    } finally {
-                      setIsLoading(false)
+                    router.push("/signin")
+                    setIsLoading(false)
                     }
-                  }}
+                  }
                 >
-                  Resend Code
+                  Skip
                 </button>
               </div>
             </form>

@@ -28,7 +28,7 @@ export default function ForgotPasswordPage() {
     setIsLoading(true)
 
     try {
-      const result = await authService.resetPassword(email,"200",newPassword)
+      const result = await authService.sendPasswordResetEmail(email)
 
       if (result.success) {
         setCodeSent(true)
@@ -156,12 +156,6 @@ export default function ForgotPasswordPage() {
                   "Reset Password"
                 )}
               </Button>
-              <div className="text-center text-sm">
-                <span className="text-muted-foreground">Didn't receive a code? </span>
-                <button type="button" className="text-primary hover:underline" onClick={handleSendCode}>
-                  Resend Code
-                </button>
-              </div>
             </form>
           ) : (
             <form onSubmit={handleSendCode} className="space-y-4">

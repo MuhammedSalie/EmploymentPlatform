@@ -107,10 +107,6 @@ export default function JobCard({ job }: JobCardProps) {
               Remote
             </Badge>
           )}
-          <Badge variant="outline" className="flex items-center gap-1">
-            <DollarSign className="h-3 w-3" />
-            {job.salary}
-          </Badge>
           {job.xpReward && (
             <Badge variant="secondary" className="flex items-center gap-1">
               <Sparkles className="h-3 w-3" />+{job.xpReward} XP

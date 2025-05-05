@@ -12,7 +12,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function JobSearch() {
   const [salaryRange, setSalaryRange] = useState([50000])
-
+  const [keywords, setKeywords] = useState("")
+  const [location, setLocation] = useState("")
+  const [jobType, setJobType] = useState("all")
+  const [experience, setExperience] = useState("all")
+  const [remoteOptions, setRemoteOptions] = useState({
+  remote: false,
+  hybrid: false,
+  onsite: false,
+  })
   return (
     <Card className="sticky top-8">
       <CardHeader>
@@ -24,7 +32,7 @@ export default function JobSearch() {
             <Label htmlFor="keywords">Keywords</Label>
             <div className="relative">
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input id="keywords" placeholder="Job title, skills, or company" className="pl-9" />
+              <Input id="keywords" value={keywords} onChange={(e) => setKeywords(e.target.value)} placeholder="Job title, skills, or company" className="pl-9" />
             </div>
           </div>
 
@@ -32,13 +40,13 @@ export default function JobSearch() {
             <Label htmlFor="location">Location</Label>
             <div className="relative">
               <MapPin className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input id="location" placeholder="City, state, or remote" className="pl-9" />
+              <Input id="location" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="City, state, or Country" className="pl-9" />
             </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="job-type">Job Type</Label>
-            <Select defaultValue="all">
+            <Select defaultValue="all" value={jobType} onValueChange={setJobType}>
               <SelectTrigger id="job-type">
                 <SelectValue placeholder="Select job type" />
               </SelectTrigger>
@@ -54,7 +62,7 @@ export default function JobSearch() {
 
           <div className="space-y-2">
             <Label htmlFor="experience">Experience Level</Label>
-            <Select defaultValue="all">
+            <Select defaultValue="all" value={experience} onValueChange={setExperience}>
               <SelectTrigger id="experience">
                 <SelectValue placeholder="Select experience level" />
               </SelectTrigger>
@@ -68,26 +76,14 @@ export default function JobSearch() {
             </Select>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <Label htmlFor="salary-range">Salary Range</Label>
-              <span className="text-sm font-medium">${salaryRange[0].toLocaleString()}+</span>
-            </div>
-            <Slider
-              id="salary-range"
-              min={0}
-              max={200000}
-              step={10000}
-              value={salaryRange}
-              onValueChange={setSalaryRange}
-            />
-          </div>
-
           <div className="space-y-3">
             <Label>Remote Options</Label>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <Checkbox id="remote-yes" />
+                <Checkbox id="remote-yes" checked={remoteOptions.remote}
+                  onCheckedChange={(checked) =>
+                  setRemoteOptions((prev) => ({ ...prev, remote: !!checked }))
+} />
                 <label
                   htmlFor="remote-yes"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -96,7 +92,10 @@ export default function JobSearch() {
                 </label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox id="remote-hybrid" />
+                <Checkbox id="remote-hybrid" checked={remoteOptions.hybrid}
+                  onCheckedChange={(checked) =>
+                  setRemoteOptions((prev) => ({ ...prev, hybrid: !!checked }))
+} />
                 <label
                   htmlFor="remote-hybrid"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -105,7 +104,10 @@ export default function JobSearch() {
                 </label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox id="remote-onsite" />
+                <Checkbox id="remote-onsite" checked={remoteOptions.onsite}
+                  onCheckedChange={(checked) =>
+                  setRemoteOptions((prev) => ({ ...prev, onsite: !!checked }))
+}/>
                 <label
                   htmlFor="remote-onsite"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -119,7 +121,17 @@ export default function JobSearch() {
           <Button type="submit" className="w-full">
             Apply Filters
           </Button>
-          <Button type="button" variant="outline" className="w-full">
+          <Button type="button" variant="outline" className="w-full" onClick={() => {
+            setKeywords("")
+            setLocation("")
+            setJobType("all")
+            setExperience("all")
+            setRemoteOptions({
+             remote: false,
+             hybrid: false,
+             onsite: false,
+            })
+          }}>
             Reset Filters
           </Button>
         </form>

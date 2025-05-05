@@ -1,9 +1,24 @@
+"use client"
+
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, Briefcase, Building, MapPin } from "lucide-react"
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState("")
+  const [location, setLocation] = useState("")
+  const router = useRouter()
+
+  const handleSearch = () => {
+    const params = new URLSearchParams()
+    if (searchTerm) params.set("query", searchTerm)
+    if (location) params.set("location", location)
+    router.push(`/jobs?${params.toString()}`)
+  }
+
   return (
     <div>
       {/* Hero Section */}
@@ -12,10 +27,10 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center">
             <div>
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-2xl">
-                   Spring Into <span className="text-primary">Your Career</span> Today
+                Spring Into <span className="text-primary">Your Career</span> Today
               </h1>
               <p className="mt-2 text-lg text-muted-foreground">
-              Kickstart your career with NextLeaf. We help ambitious new talent connect with awesome companies looking for fresh ideas...
+                Kickstart your career with NextLeaf. We help ambitious new talent connect with awesome companies looking for fresh ideas...
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg">
@@ -43,6 +58,8 @@ export default function Home() {
                           id="search"
                           className="pl-10"
                           placeholder="Software Engineer, Marketing, etc."
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
                         />
                       </div>
                     </div>
@@ -56,18 +73,27 @@ export default function Home() {
                         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                           <MapPin className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
                         </div>
-                        <Input type="text" id="location" className="pl-10" placeholder="City, State, or Remote" />
+                        <Input
+                          type="text"
+                          id="location"
+                          className="pl-10"
+                          placeholder="City, State, or Country"
+                          value={location}
+                          onChange={(e) => setLocation(e.target.value)}
+                        />
                       </div>
                     </div>
                   </div>
-                  <Button className="w-auto">Search Jobs</Button>
+                  <Button className="w-auto" onClick={handleSearch}>
+                    Search Jobs
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+    
       {/* Featured Job Categories */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

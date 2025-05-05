@@ -13,10 +13,9 @@ const MOCK_JOBS = [
   {
     id: "1",
     title: "Senior Frontend Developer",
-    category: "technology",
+    category: "Technology",
     company: "TechCorp",
     location: "San Francisco, CA",
-    salary: "$120,000 - $150,000",
     type: "Full-time",
     remote: true,
     posted: "2 days ago",
@@ -34,10 +33,9 @@ const MOCK_JOBS = [
   {
     id: "2",
     title: "Backend Engineer",
-    category: "technology",
+    category: "Technology",
     company: "DataSystems",
     location: "New York, NY",
-    salary: "$130,000 - $160,000",
     type: "Full-time",
     remote: false,
     posted: "1 week ago",
@@ -54,10 +52,9 @@ const MOCK_JOBS = [
   {
     id: "3",
     title: "UX/UI Designer",
-    category: "marketing",
+    category: "Marketing",
     company: "CreativeMinds",
-    location: "Remote",
-    salary: "$90,000 - $120,000",
+    location: "Cape Town",
     type: "Contract",
     remote: true,
     posted: "3 days ago",
@@ -74,10 +71,9 @@ const MOCK_JOBS = [
   {
     id: "4",
     title: "DevOps Engineer",
-    category: "finance",
+    category: "Finance",
     company: "CloudTech",
     location: "Austin, TX",
-    salary: "$110,000 - $140,000",
     type: "Full-time",
     remote: true,
     posted: "5 days ago",
@@ -94,10 +90,9 @@ const MOCK_JOBS = [
   {
     id: "5",
     title: "Product Manager",
-    category: "finance",
+    category: "Finance",
     company: "InnovateCo",
     location: "Chicago, IL",
-    salary: "$100,000 - $130,000",
     type: "Full-time",
     remote: false,
     posted: "1 day ago",
@@ -115,6 +110,8 @@ const MOCK_JOBS = [
 
 export default function JobList() {
   const searchParams = useSearchParams()
+  const queryFilter = searchParams.get("query")?.toLowerCase()
+  const locationFilter = searchParams.get("location")?.toLowerCase()
   const categoryFilter = searchParams.get("category")?.toLowerCase()
   const [jobs, setJobs] = useState(MOCK_JOBS)
   const [loading, setLoading] = useState(true)
@@ -125,12 +122,26 @@ export default function JobList() {
     const timer = setTimeout(() => {
       let filtered = MOCK_JOBS
 
-      if (categoryFilter) {
-        filtered = MOCK_JOBS.filter((job) =>
-          job.category.toLowerCase().includes(categoryFilter)
+      if (queryFilter) {
+        filtered = filtered.filter((job) =>
+          job.title.toLowerCase().includes(queryFilter) ||
+          job.company.toLowerCase().includes(queryFilter) ||
+          job.description.toLowerCase().includes(queryFilter) 
         )
       }
-
+  
+      if (locationFilter) {
+        filtered = filtered.filter((job) =>
+          job.location.toLowerCase().includes(locationFilter)  
+      )       
+      }
+  
+      if (categoryFilter) {
+        filtered = MOCK_JOBS.filter((job) =>
+          job.category?.toLowerCase().includes(categoryFilter)
+        )
+      }
+     
       setJobs(filtered)
       setLoading(false)
     }, 500)

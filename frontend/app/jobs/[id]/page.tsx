@@ -36,7 +36,6 @@ const JOB = {
   title: "Senior Frontend Developer",
   company: "TechCorp",
   location: "San Francisco, CA",
-  salary: "$120,000 - $150,000",
   type: "Full-time",
   remote: true,
   posted: "2 days ago",
@@ -160,10 +159,6 @@ export default function JobDetailPage() {
                     Remote
                   </Badge>
                 )}
-                <Badge variant="outline" className="flex items-center gap-1">
-                  <DollarSign className="h-3 w-3" />
-                  {job.salary}
-                </Badge>
               </div>
 
               <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-6">

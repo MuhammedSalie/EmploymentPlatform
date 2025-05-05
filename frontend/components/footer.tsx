@@ -25,7 +25,7 @@ export default function Footer() {
             <h3 className="text-sm font-semibold">For Recruiters</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
-                <Link href="/post-job" className="text-muted-foreground hover:text-primary">
+                <Link href="/job-post" className="text-muted-foreground hover:text-primary">
                   Post a Job
                 </Link>
               </li>

@@ -33,6 +33,7 @@ export default function SignInPage() {
     const verified = searchParams?.get("verified")
     if (verified === "true") {
       setVerificationSuccess(true)
+      document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
     }
   }, [isAuthenticated, router, searchParams])
 

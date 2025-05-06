@@ -26,8 +26,6 @@ const MOCK_JOBS = [
       "Experience with state management libraries",
     ],
     logo: "/placeholder.svg?height=80&width=80",
-    matchScore: 92,
-    xpReward: 30,
     featured: true,
   },
   {
@@ -46,8 +44,6 @@ const MOCK_JOBS = [
       "Understanding of microservices architecture",
     ],
     logo: "/placeholder.svg?height=80&width=80",
-    matchScore: 85,
-    xpReward: 25,
   },
   {
     id: "3",
@@ -65,8 +61,6 @@ const MOCK_JOBS = [
       "Understanding of user-centered design principles",
     ],
     logo: "/placeholder.svg?height=80&width=80",
-    matchScore: 78,
-    xpReward: 20,
   },
   {
     id: "4",
@@ -84,8 +78,6 @@ const MOCK_JOBS = [
       "Scripting skills in Python or Bash",
     ],
     logo: "/placeholder.svg?height=80&width=80",
-    matchScore: 65,
-    xpReward: 25,
   },
   {
     id: "5",
@@ -103,8 +95,6 @@ const MOCK_JOBS = [
       "Experience with agile methodologies",
     ],
     logo: "/placeholder.svg?height=80&width=80",
-    matchScore: 72,
-    xpReward: 20,
   },
 ]
 
@@ -156,8 +146,6 @@ export default function JobList() {
       setJobs([...jobs].sort((a, b) => (b.matchScore || 0) - (a.matchScore || 0)))
     } else if (value === "newest") {
       setJobs([...jobs].sort((a, b) => (a.posted.includes("day") ? -1 : 1)))
-    } else if (value === "xp") {
-      setJobs([...jobs].sort((a, b) => (b.xpReward || 0) - (a.xpReward || 0)))
     }
   }
 
@@ -176,14 +164,6 @@ export default function JobList() {
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <h2 className="text-xl font-semibold">{jobs.length} jobs found</h2>
-            <div className="mt-2">
-              <div className="mb-1 flex items-center justify-between text-xs">
-                <span>Daily browsing goal</span>
-                <span>{dailyProgress}%</span>
-              </div>
-              <Progress value={dailyProgress} className="h-2" />
-              <p className="mt-1 text-xs text-muted-foreground">View 10 more jobs to earn +15 XP</p>
-            </div>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">Sort by:</span>
@@ -194,8 +174,6 @@ export default function JobList() {
               <SelectContent>
                 <SelectItem value="match">Best Match</SelectItem>
                 <SelectItem value="newest">Most Recent</SelectItem>
-                <SelectItem value="xp">Highest XP</SelectItem>
-                <SelectItem value="salary-high">Highest Salary</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -211,7 +189,6 @@ export default function JobList() {
       <div className="mt-8 flex justify-center">
         <Button variant="outline" className="flex items-center gap-2">
           Load More Jobs
-          <span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">+5 XP</span>
         </Button>
       </div>
     </div>

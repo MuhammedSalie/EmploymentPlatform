@@ -26,7 +26,7 @@ export default function SignInPage() {
   useEffect(() => {
     // Check if user is already authenticated
     if (isAuthenticated) {
-      router.push("/dashboard")
+      router.push("/applications")
     }
 
     // Check if user just verified their account
@@ -49,7 +49,7 @@ export default function SignInPage() {
         // Redirect to dashboard after successful login
         //await fetch("/api/login", { method: "POST" })
         document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
-        router.push("/dashboard")
+        router.push("/applications")
       } else {
         setError(result.error.message || "Invalid email or password. Please try again.")
       }

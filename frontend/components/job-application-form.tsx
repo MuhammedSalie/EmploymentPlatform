@@ -291,16 +291,6 @@ export default function JobApplicationForm({ jobId, jobTitle, company, xpReward 
           />
         </div>
 
-        <div className="rounded-lg bg-primary/10 p-4 text-center">
-          <div className="flex items-center justify-center gap-2">
-            <Trophy className="h-5 w-5 text-primary" />
-            <span className="font-medium text-primary">Complete this application to earn {xpReward} XP!</span>
-          </div>
-          <p className="mt-1 text-xs text-muted-foreground">
-            You'll also unlock the "Quick Applicant" achievement if you complete it within 5 minutes.
-          </p>
-        </div>
-
         <DialogFooter>
           <Button type="submit" disabled={isSubmitting} className="w-full">
             {isSubmitting ? (

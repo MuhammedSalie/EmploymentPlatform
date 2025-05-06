@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 // Define which routes require authentication
-const protectedRoutes = ["/dashboard", "/applications", "/profile", "/jobs/apply"]
+const protectedRoutes = ["/dashboard", "/applications", "/profile", "/jobs/"]
 
 // Define public routes that should redirect to dashboard if already authenticated
 const authRoutes = ["/signin", "/signup", "/forgot-password"]
@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
 
   // If accessing auth routes while already authenticated
   if (authRoutes.some((route) => pathname.startsWith(route)) && isAuthenticated) {
-    return NextResponse.redirect(new URL("/dashboard", request.url))
+    return NextResponse.redirect(new URL("/applications", request.url))
   }
 
   return NextResponse.next()

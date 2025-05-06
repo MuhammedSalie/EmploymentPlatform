@@ -34,7 +34,7 @@ export default function Header() {
 
   const authenticatedNavigation = [
     ...navigation,
-    { name: "Dashboard", href: "/dashboard" },
+    { name: "My Applications", href: "/applications" },
   ]
 
   const currentNavigation = isAuthenticated ? authenticatedNavigation : navigation
@@ -102,7 +102,10 @@ export default function Header() {
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem asChild>
-                      <Link href="/dashboard">Dashboard</Link>
+                      <Link href="/applications">My Applications</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/profile">Profile</Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={handleSignOut} className="text-red-600 dark:text-red-400">

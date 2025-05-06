@@ -67,8 +67,6 @@ export default function ApplicationsPage() {
   useEffect(() => {
     // Check if redirected from successful application
     if (searchParams?.get("success") === "true") {
-      const xp = Number.parseInt(searchParams?.get("xp") || "50")
-      setXpEarned(xp)
       setShowSuccess(true)
 
       toast({
@@ -98,9 +96,6 @@ export default function ApplicationsPage() {
               <h3 className="font-semibold text-green-800 dark:text-green-300">Application Submitted Successfully!</h3>
               <p className="text-green-700 dark:text-green-400">Your application has been received.</p>
             </div>
-            <div className="bg-green-100 dark:bg-green-800 px-3 py-1 rounded-full flex items-center">
-              <span className="text-green-800 dark:text-green-300 font-medium">+{xpEarned} XP</span>
-            </div>
           </div>
         </div>
       )}
@@ -112,9 +107,6 @@ export default function ApplicationsPage() {
               <div>
                 <h3 className="font-semibold text-lg">Application Progress</h3>
                 <p className="text-muted-foreground">Track your job application journey</p>
-              </div>
-              <div className="bg-green-100 dark:bg-green-800 px-3 py-1 rounded-full">
-                <span className="text-green-800 dark:text-green-300 font-medium">Level 2 Applicant</span>
               </div>
             </div>
 
@@ -131,18 +123,6 @@ export default function ApplicationsPage() {
                 <div className="text-2xl font-bold">{applications.filter((a) => a.status === "offered").length}</div>
                 <div className="text-sm text-muted-foreground">Offers</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold">75%</div>
-                <div className="text-sm text-muted-foreground">Response Rate</div>
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <div className="flex justify-between mb-1 text-sm">
-                <span>Progress to Level 3</span>
-                <span>65%</span>
-              </div>
-              <Progress value={65} className="h-2" />
             </div>
           </CardContent>
         </Card>
@@ -188,16 +168,8 @@ export default function ApplicationsPage() {
                           <div className="text-sm text-muted-foreground">Applied on {application.appliedDate}</div>
 
                           <div className="flex gap-2 mt-2 sm:mt-0">
-                            {application.status === "interview" && (
-                              <Badge variant="outline" className="cursor-pointer hover:bg-secondary">
-                                Prepare for Interview +25 XP
-                              </Badge>
-                            )}
-                            {application.status === "applied" && (
-                              <Badge variant="outline" className="cursor-pointer hover:bg-secondary">
-                                Follow Up +15 XP
-                              </Badge>
-                            )}
+                            {application.status === "interview"}
+                            {application.status === "applied"}
                           </div>
                         </div>
                       </div>

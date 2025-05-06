@@ -192,11 +192,6 @@ export default function JobDetailPage() {
                   <div className="space-y-4">
                     <h3 className="font-semibold">About {job.company}</h3>
                     <p className="text-muted-foreground">{job.companyDescription}</p>
-                    <Button asChild variant="outline">
-                      <Link href={`/companies/${job.company.toLowerCase().replace(/\s+/g, "-")}`}>
-                        View Company Profile
-                      </Link>
-                    </Button>
                   </div>
                 </TabsContent>
                 <TabsContent value="benefits" className="pt-4">

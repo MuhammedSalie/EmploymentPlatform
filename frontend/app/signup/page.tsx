@@ -122,7 +122,7 @@ export default function SignUpPage() {
         if (signInResult.success) {
           //Redirect to dashboard after successful sign-in
           document.cookie = "amplify.authenticatorAuthState=signedIn; path=/; secure; samesite=strict; max-age=86400";
-          router.push("/dashboard")
+          router.push("/applications")
         } else {
           // If sign-in fails, redirect to sign-in page
           router.push("/signin?verified=true")

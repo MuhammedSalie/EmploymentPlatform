@@ -119,9 +119,6 @@ export default function JobCard({ job }: JobCardProps) {
         <Button asChild variant="default">
           <Link href={`/jobs/${job.id}`}>View Job</Link>
         </Button>
-        <Button variant="ghost" size="icon" onClick={handleSave} aria-label={isSaved ? "Unsave job" : "Save job"}>
-          {isSaved ? <BookmarkCheck className="h-5 w-5 text-primary" /> : <BookmarkPlus className="h-5 w-5" />}
-        </Button>
       </CardFooter>
     </Card>
   )

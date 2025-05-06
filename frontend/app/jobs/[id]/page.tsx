@@ -222,19 +222,7 @@ export default function JobDetailPage() {
                     <JobApplicationForm jobId={job.id} jobTitle={job.title} company={job.company} />
                   </DialogContent>
                 </Dialog>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setIsSaved(!isSaved)}
-                  aria-label={isSaved ? "Unsave job" : "Save job"}
-                >
-                  {isSaved ? <BookmarkCheck className="h-5 w-5 text-primary" /> : <BookmarkPlus className="h-5 w-5" />}
-                </Button>
               </div>
-              <Button variant="outline" size="sm" className="flex items-center gap-1">
-                <Share2 className="h-4 w-4" />
-                Share
-              </Button>
             </CardFooter>
           </Card>
         </div>
@@ -299,11 +287,6 @@ export default function JobDetailPage() {
                 <p className="line-clamp-3">{job.companyDescription}</p>
               </div>
             </CardContent>
-            <CardFooter>
-              <Button asChild variant="outline" className="w-full">
-                <Link href={`/companies/${job.company.toLowerCase().replace(/\s+/g, "-")}`}>View Company Profile</Link>
-              </Button>
-            </CardFooter>
           </Card>
         </div>
       </div>

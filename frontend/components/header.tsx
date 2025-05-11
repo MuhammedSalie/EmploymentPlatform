@@ -35,6 +35,7 @@ export default function Header() {
   const authenticatedNavigation = [
     ...navigation,
     { name: "🌿 FreshTrack", href: "/applications" },
+    { name: "Profile", href: "/profile" },
   ]
 
   const currentNavigation = isAuthenticated ? authenticatedNavigation : navigation

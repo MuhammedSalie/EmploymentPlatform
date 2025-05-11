@@ -61,7 +61,7 @@ const ProfilePage = () => {
     const client = new CacheClient({
       configuration: Configurations.Laptop.v1(),
       credentialProvider: CredentialProvider.fromString(process.env.NEXT_PUBLIC_MOMENTO_API_KEY!),
-      defaultTtlSeconds: 600,
+      defaultTtlSeconds: 86400,
     });
 
     const response = await client.set('job-portal-cache', 'user-profile', JSON.stringify(formData));

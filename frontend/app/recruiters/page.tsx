@@ -1,8 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import UserLevel from "@/components/user-level"
-import DailyTasks from "@/components/daily-tasks"
 import Achievements from "@/components/achievements"
 import Leaderboard from "@/components/leaderboard"
 import Rewards from "@/components/rewards"

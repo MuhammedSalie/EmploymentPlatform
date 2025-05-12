@@ -82,8 +82,11 @@ export default function Header() {
               <>
                 <Button variant="ghost" size="icon" className="relative">
                   <Bell className="h-5 w-5" />
-                  <span className="absolute right-1 top-1 flex h-2 w-2 rounded-full bg-primary"></span>
+                  <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-white text-xs font-bold">
+                    3
+                </span>
                 </Button>
+                
                 <ModeToggle />
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -130,7 +133,9 @@ export default function Header() {
           <div className="flex md:hidden">
             <Button variant="ghost" size="icon" className="relative mr-2">
               <Bell className="h-5 w-5" />
-              <span className="absolute right-1 top-1 flex h-2 w-2 rounded-full bg-primary"></span>
+              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-white text-xs font-bold">
+                3
+            </span>
             </Button>
             <ModeToggle />
             <button
@@ -180,7 +185,6 @@ export default function Header() {
                     </Avatar>
                     <div>
                       <p className="text-sm font-medium">{user?.attributes?.name || "User"}</p>
-                      <p className="text-xs text-muted-foreground">Level 3</p>
                     </div>
                   </div>
                   <Button variant="outline" size="sm" onClick={handleSignOut}>

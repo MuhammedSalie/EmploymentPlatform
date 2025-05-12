@@ -36,7 +36,7 @@ const ProfilePage = () => {
         setFormData(JSON.parse(value));
         toast({
           title: 'Profile found',
-          description: 'Your profile data was loaded.',
+          description: 'Your profile was loaded.',
         });
       } else {
         toast({

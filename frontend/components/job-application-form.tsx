@@ -93,11 +93,8 @@ export default function JobApplicationForm({ jobId, jobTitle, company, xpReward 
 
     setIsSubmitting(false)
 
-    // In a real app, you would submit to your backend here
-    // and then redirect or show a success message
-
-    // Redirect to applications page with XP reward
-    router.push(`/applications?success=true&xp=${xpReward}`)
+    // Redirect to applications page
+    router.push(`/applications?success=true`)
   }
 
   return (
